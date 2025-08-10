@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S2 Constructions</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; scroll-behavior: smooth; background-color: #111; color: white; }
+
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 15px 10%;
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 1000;
+        }
+        header img { height: 50px; }
+        nav { display: flex; gap: 20px; }
+        nav a { color: white; text-decoration: none; font-weight: bold; }
+        nav a:hover { color: #d4af37; }
+        .menu-toggle { display: none; cursor: pointer; font-size: 1.5rem; }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: url('https://images.unsplash.com/photo-1594737625785-c7c9a1fdc6d2?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; position: relative;
+        }
+        .hero::after {
+            content: ''; position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%; background: rgba(0,0,0,0.6);
+        }
+        .hero-content {
+            position: relative; z-index: 1;
+            max-width: 700px;
+        }
+        .hero-content img { height: 120px; margin-bottom: 20px; }
+        .hero h1 { font-size: 3rem; color: #d4af37; }
+        .hero p { font-size: 1.2rem; margin-top: 10px; }
+
+        /* Sections */
+        section { padding: 60px 10%; }
+        h2 { color: #d4af37; text-align: center; margin-bottom: 30px; }
+        .services { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+        .service { background: #1a1a1a; padding: 20px; flex: 1 1 250px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.3); text-align: center; }
+        .service h3 { color: #ffcc00; }
+
+        /* Contact */
+        .contact form { display: flex; flex-direction: column; gap: 10px; max-width: 400px; margin: auto; }
+        .contact input, .contact textarea { padding: 10px; border: none; border-radius: 4px; background: #222; color: white; }
+        .contact button { padding: 10px; background: #d4af37; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        .contact button:hover { background: #b8912c; }
+
+        /* Footer */
+        footer { text-align: center; background: #000; color: #aaa; padding: 20px; margin-top: 20px; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav { display: none; flex-direction: column; background: #111; position: absolute; top: 60px; right: 0; width: 200px; padding: 10px; }
+            nav.active { display: flex; }
+            .menu-toggle { display: block; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <img src="YOUR_LOGO_URL" alt="S2 Logo">
+        <div class="menu-toggle">&#9776;</div>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <img src="YOUR_LOGO_URL" alt="S2 Logo">
+            <h1>Building Dreams, Creating Reality</h1>
+            <p>Premium construction services with unmatched quality and design.</p>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="service">
+                <h3>Luxury Residential Projects</h3>
+                <p>Crafting elegant, durable, and modern homes.</p>
+            </div>
+            <div class="service">
+                <h3>Commercial Buildings</h3>
+                <p>High-end office spaces, retail outlets, and industrial complexes.</p>
+            </div>
+            <div class="service">
+                <h3>Renovations</h3>
+                <p>Transforming old spaces into stunning modern masterpieces.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p style="max-width:700px; margin:auto; text-align:center;">
+            With decades of experience in the industry, S2 Constructions delivers premium quality projects.
+            We blend modern architecture with timeless design, ensuring excellence in every detail.
+        </p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 S2 Constructions. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Mobile Menu
+        const menuToggle = document.querySelector(".menu-toggle");
+        const nav = document.querySelector("nav");
+        menuToggle.addEventListener("click", () => {
+            nav.classList.toggle("active");
+        });
+    </script>
+    <p> BY HEROLES </p>
+
+</body>
+</html>
